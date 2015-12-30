@@ -1,3 +1,4 @@
+
 == Externe I/O
 
 In dit hoofdstuk komen een aantal veel voorkomende interfaces voor randapparatuur voor. Een aantal hiervan worden uitgebreider besproken in de cursus “interfacing & microcontrollers”.
