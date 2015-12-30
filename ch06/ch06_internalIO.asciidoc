@@ -1,3 +1,4 @@
+
 == Internal I/O
 In dit hoofdstuk wordt een overzicht gegeven van de verschillende manieren waarop data uitgewisseld wordt op het moederbord, en met de systeemapparaten.
 
