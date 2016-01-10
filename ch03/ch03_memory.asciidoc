@@ -455,16 +455,16 @@ Zes bits zijn nog steeds nodig om een byte in de cache line te selecteren. Daarn
 Rekenvoorbeeld (meer voorbeelden vind je in <<PATT2>> en <<RAMA2>>)
 
 *Opgave:*
-Een 4-way set associative cache heeft een grootte van 64KB. De CPU werkt met 32-bit addressering, elk geheugenwoord bevat 4 bytes. Elke cache-line bevat 16 bytes. De cache gebruikt een write-through policy.
+Een 4-way set associative cache heeft een grootte van 64KB. De CPU werkt met 32-bit addressering, elk geheugenwoord bevat dus 4 bytes. Elke cache-line bevat 16 bytes. 
 Bereken de totale benodigde hoeveelheid geheugen (geheugen+tags) die nodig is om dit te implementeren…
 
 *Antwoord:*
 
-het aantal bits in een adres is 32 (latexmath:[a]) +
-Een cacheline omvat 16 bytes, wat betekent dat de vier (latexmath:[b]) LSB’s niet moeten geadresseerd worden. +
-Het aantal sets is dan latexmath:[\dfrac{64\text{ KB}}{4 \times 16} = 1024] (latexmath:[c]) +
-Het aantal bits dat nodig is om deze te kunnen adresseren: latexmath:[\log_2 1024= 10 bits ] (latexmath:[d]) + 
-Het aantal tag bits wordt dan: 
+* Het aantal bits in een adres is 32 (latexmath:[a]) +
+* Een cacheline omvat 16 bytes, wat betekent dat de vier (latexmath:[b]) minst betekenende bits niet moeten geadresseerd worden. +
+* Het aantal sets is dan latexmath:[\dfrac{64\text{ KB}}{4 \times 16} = 1024] (latexmath:[c]) +
+* Het aantal bits dat nodig is om deze te kunnen adresseren: latexmath:[\log_2 1024= 10 bits ] (latexmath:[d]) + 
+* Het aantal tag bits wordt dan: 
 
 [latexmath]
 ++++
@@ -474,7 +474,7 @@ Het aantal tag bits wordt dan:
 Om de totale grootte dan te berekenen kan je redeneren: +
 
 * Elke cachelijn heeft 16 bytes data, en een tag van 18 bits. Dit komt op een totaal van 146 bits.
-* Dit moet je met vier vermenigvuldigen (‘4’-way) en met het aantal sets (d), wat resulteert in 598016 bits.
+* vermenigvuldig je het aantal cachelijnen (aantal sets x lijnen per set) dan resulteert dat in 73728 bits. De hoeveelheid geheugen die nodig is om dit geheugen te maken is dus 73728 (grootte overhead) + 64kB (grootte cache). dit komt op 598016 bits.
 
 Het percentage overhead is dus (totaal benodigde bits)/('nuttige' bits)   of 14%
 ====
