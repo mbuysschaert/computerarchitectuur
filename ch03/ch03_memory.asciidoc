@@ -474,7 +474,7 @@ Bereken de totale benodigde hoeveelheid geheugen (geheugen+tags) die nodig is om
 Om de totale grootte dan te berekenen kan je redeneren: +
 
 * Elke cachelijn heeft 16 bytes data (=16x8 bits), en een tag van 18 bits. Dit komt op een totaal van 146 bits.
-* vermenigvuldig je het aantal cachelijnen (aantal sets x lijnen per set) dan resulteert dat in 73728 bits. De hoeveelheid geheugen die nodig is om dit geheugen te maken is dus 73728 (grootte overhead) + 64kB (grootte cache). dit komt op 598016 bits.
+* Vermenigvuldig je het aantal cachelijnen (aantal sets x lijnen per set) met het aantal bits per tag dan resulteert dat in 73728 bits. De hoeveelheid geheugen die nodig is om dit geheugen te maken is dus 73728 (grootte overhead) + 64kB (grootte cache). dit komt op 598016 bits.
 
 Het percentage overhead is dus (totaal benodigde bits)/('nuttige' bits)   of 14%
 ====
